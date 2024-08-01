@@ -1,0 +1,20 @@
+1012
+#include <stdio.h>
+ 
+int main() {
+    double A, B, C;
+    scanf("lf")
+    
+printf("TRIANGULO:")
+printf("CIRCULO:")
+printf("TRAPEZIO:")
+printf("QUADRADO:")
+printf("RETANGULO: ")
+    
+    
+    
+    
+    return 0;
+}
+ 
+  
