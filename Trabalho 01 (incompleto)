@@ -48,7 +48,7 @@ double raiz(double a)
     scanf("%lf",&a);
     b = a;
     con = 0;
-    while (con<5)
+    while (con<20)
     {
         b = (0.5)*(b+(a/b));
         con ++;
@@ -57,8 +57,30 @@ double raiz(double a)
 
 return (res);
 }
+//Fatorial
+double fato(double a)
+{
+    
+double cont;
+scanf("%lf",&a);
+cont = a-1;
+while (cont>1){
+ a= a*cont;
+ cont --;
+}
+return (a);
+}
+//MDC
+double mdc (double a, double b)
+{
+    
+}
+
+
 int main()
 {
+    for( ; ; ){
+    
     int esc = -1;
     double n1,n2,n3,n4,n5,res;
 printf("Escolha a operação:\n\n0.Sair\n\n1.Soma\n\n2.Subtração\n\n3.Multiplicação\n\n4.Divisão\n\n5.Potenciação\n\n6.Raiz Quadrada\n\n7.Fatorial\n\n8.MDC\n\n9.MMC\n\n10.Equação de Segundo Grau\n\n");
@@ -67,6 +89,7 @@ switch (esc)
 {
     case 0:
     printf("Sair\n");
+    return 0;
     break;
     case 1:
     printf ("Soma\n");
@@ -102,5 +125,6 @@ switch (esc)
     printf("número inváldio!\n");
     break;
 }
-return 0;
+
+}
 }
