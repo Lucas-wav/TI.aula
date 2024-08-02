@@ -1,0 +1,106 @@
+#include <stdio.h>
+//Soma
+double soma(double a,double b)
+{
+    double res=0;
+    res= a+b;
+    return (res);
+}
+
+//Subtração
+double subt(double a, double b)
+{
+    double res=0;
+    res= a-b;
+    return (res);
+}
+//Multiplicação
+double mult (double a, double b)
+{
+    double res=0;
+    res= a*b;
+    return (res);
+}
+//Divisão
+double divd(double a, double b)
+{
+    double res=0;
+    res= a/b;
+    return (res);
+}
+//Potenciação
+double pote(double a, double b)
+{
+      double res,con;
+    res = b;
+    con = 0;
+   while (con<a);
+   {
+      res= b*res;
+       con++;
+   }
+   return (res);
+}
+//Raiz Quadrada
+double raiz(double a)
+{
+    double b, res, con;
+    scanf("%lf",&a);
+    b = a;
+    con = 0;
+    while (con<5)
+    {
+        b = (0.5)*(b+(a/b));
+        con ++;
+    }
+    res = b;
+
+return (res);
+}
+int main()
+{
+    int esc = -1;
+    double n1,n2,n3,n4,n5,res;
+printf("Escolha a operação:\n\n0.Sair\n\n1.Soma\n\n2.Subtração\n\n3.Multiplicação\n\n4.Divisão\n\n5.Potenciação\n\n6.Raiz Quadrada\n\n7.Fatorial\n\n8.MDC\n\n9.MMC\n\n10.Equação de Segundo Grau\n\n");
+printf("Digite o seu número:"); scanf("%d",&esc);
+switch (esc)
+{
+    case 0:
+    printf("Sair\n");
+    break;
+    case 1:
+    printf ("Soma\n");
+    break;
+    case 2:
+    printf("Subtração\n");
+    break;
+    case 3:
+    printf("Multiplicação\n");
+    break;
+    case 4:
+    printf("Divisão\n");
+    break;
+    case 5:
+    printf("Potenciação\n");
+    break;
+    case 6:
+    printf("Raiz Quadrada\n");
+    break;
+    case 7:
+    printf("Fatorial\n");
+    break;
+    case 8:
+    printf("MDC\n");
+    break;
+    case 9:
+    printf("MMC");
+    break;
+    case 10:
+    printf("Equação de Segundo Grau");
+    break;
+    default :
+    printf("número inváldio!\n");
+    break;
+}
+return 0;
+}
