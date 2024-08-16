@@ -45,7 +45,6 @@ double pote(double a, double b)
 double raiz(double a)
 {
     double b, res, con;
-    scanf("%lf",&a);
     b = a;
     con = 0;
     while (con<20)
@@ -62,7 +61,6 @@ double fato(double a)
 {
     
 double cont;
-scanf("%lf",&a);
 cont = a-1;
 while (cont>1){
  a= a*cont;
@@ -71,18 +69,46 @@ while (cont>1){
 return (a);
 }
 //MDC
-double mdc (double a, double b)
+double mdc (int a, int b)
 {
-    
+    while (b != 0) {
+        int c = b;
+        b = a % b;
+        a = c;
+    }
+    return a;
 }
-
-
+//MMC
+double mmc (int a, int b)
+{
+    double c = mdc(a, b),d;
+    d = (a*b)/c;   
+    
+    return (d);
+}
+//Bhaskara
+double bhas(double a, double b, double c)
+{
+    double r,res;
+    r= ((b*b) - 4*a*c);
+    r = raiz(r);
+    res= ((b*-1)+r)/(a*2);
+   return(res);
+}
+double bhas2(double a, double b, double c)
+{
+    double r,res;
+    r= ((b*b) - 4*a*c);
+    r = raiz(r);
+    res= ((b*-1)-r)/(a*2);
+   return(res);
+}
 int main()
 {
     for( ; ; ){
     
-    int esc = -1;
-    double n1,n2,n3,n4,n5,res;
+    int esc = -1, A, B;
+    double n1,n2,n3,n4,n5,res,res2;
 printf("Escolha a operação:\n\n0.Sair\n\n1.Soma\n\n2.Subtração\n\n3.Multiplicação\n\n4.Divisão\n\n5.Potenciação\n\n6.Raiz Quadrada\n\n7.Fatorial\n\n8.MDC\n\n9.MMC\n\n10.Equação de Segundo Grau\n\n");
 printf("Digite o seu número:"); scanf("%d",&esc);
 switch (esc)
@@ -91,36 +117,96 @@ switch (esc)
     printf("Sair\n");
     return 0;
     break;
+    
     case 1:
     printf ("Soma\n");
+    printf("digite os números a serem somados\n");
+    scanf("%lf%lf",&n1,&n2);
+    n3 = soma(n1,n2);
+    printf("a soma de %.5lf e %.5lf é %.5lf\n",n1,n2,n3);
     break;
+    
     case 2:
     printf("Subtração\n");
+    printf("digite o minuendo\n");
+    scanf("%lf",&n1);
+    printf("digite o subtraendo\n");
+    scanf("%lf",&n1);
+    n3 = subt(n1,n2);
+    printf("%.5lf menos %.5lf é %.5lf\n",n1,n2,n3);
     break;
+    
     case 3:
     printf("Multiplicação\n");
+    printf("digite os números a serem multiplicados\n");
+    scanf("%lf%lf",&n1,&n2);
+    n3 = mult(n1,n2);
+    printf("o produto de %.5lf e %.5lf é %.5lf\n",n1,n2,n3);
     break;
+    
     case 4:
     printf("Divisão\n");
+    printf("digite o dividendo\n");
+    scanf("%lf",&n1);
+    printf("digite o divisor\n");
+    scanf("%lf",&n2);
+    n3 = divd(n1,n2);
+    printf("o quociente de %.5lf por %.5lf é %.5lf\n",n1,n2,n3);
     break;
+    
     case 5:
     printf("Potenciação\n");
+    printf("digite o número a ser elevado\n");
+    scanf("%lf",&n1);
+    printf("digite o expoente");
+    scanf("%lf",&n2);
+    n3 = pote(n1,n2);
+    printf("%.5lf elevado a %.5lf é %.5lf\n",n1,n2,n3);
     break;
+    
     case 6:
     printf("Raiz Quadrada\n");
+    printf("digite o número a ser utilizado\n");
+    scanf("%lf",&n1);
+    n2 = raiz(n1);
+    printf("a raiz quadrada de %.5lf é %.5lf\n",n1,n2);
     break;
+    
     case 7:
     printf("Fatorial\n");
+    printf("digite o número a ser utilizado\n");
+    scanf("%lf",&n1);
+    n2 = fato(n1);
+    printf("a fatorial de %.5lf é %.5lf\n",n1,n2);
     break;
+    
     case 8:
     printf("MDC\n");
+    printf("digite os números para a operação\n");
+    scanf("%d%d",&A,&B);
+    //dunno how to make it work without integers, i looked for like an hour and it seems the only way is to use math.h
+    res = mdc(A,B);
+    printf("o mdc de %d e %d é %.1lf\n",A,B,res);
     break;
+    
     case 9:
-    printf("MMC");
+    printf("MMC\n");
+    printf("digite os números para a operação\n");
+    scanf("%d%d",&A,&B);
+    res = mmc(A,B);
+    printf ("o MMC de %d e %d é %.1lf\n",A,B,res);
+    
     break;
+    
     case 10:
-    printf("Equação de Segundo Grau");
+    printf("Equação de Segundo Grau\n");
+    printf("digite o valor de a,b e c\n");
+    scanf("%lf%lf%lf",&n1,&n2,&n3);
+    res = bhas(n1,n2,n3);
+    res2 = bhas2(n1,n2,n3);
+    printf("as raizes de %.5lf,%.5lf e %.5lf são %.5lf,%.5lf",n1,n2,n3,res,res2);
     break;
+    
     default :
     printf("número inváldio!\n");
     break;
