@@ -124,11 +124,16 @@ switch (esc)
     scanf("%lf%lf%lf",&n1,&n2,&n3);
     res = bhas(n1,n2,n3);
     res2 = bhas2(n1,n2,n3);
+    if(n1 == 0){
+        printf("Equação inválida!\n");
+        break;
+    }
+    
     printf("as raizes de %.5lf,%.5lf e %.5lf são %.5lf,%.5lf\n",n1,n2,n3,res,res2);
     break;
     
     default :
-    printf("número inváldio!\n");
+    printf("número inválido!\n");
     break;
 }
 
@@ -223,6 +228,7 @@ double mmc (double a, double b)
 //Bhaskara
 double bhas(double a, double b, double c)
 {
+    
     double r,res;
     r= ((b*b) - 4*a*c);
     r = raiz(r);
