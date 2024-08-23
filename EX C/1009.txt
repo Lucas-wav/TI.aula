@@ -1,0 +1,15 @@
+1009
+#include <stdio.h>
+ 
+int main() {
+    double slr, bon, tot;
+    char nome[10];
+ scanf("%s",&nome);
+ scanf("%lf",&slr);
+ scanf("%lf",&bon);
+ tot= slr+ (bon/100 *15);
+ printf("TOTAL = R$ %.2lf\n",tot);
+   
+ 
+    return 0;
+}

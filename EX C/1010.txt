@@ -1,0 +1,16 @@
+1010
+#include <stdio.h>
+ 
+int main() {
+ int prod1, prod2, n1, n2;
+ double val1,val2, tot;
+ scanf("%d",&prod1);
+ scanf("%d",&n1);
+ scanf("%lf",&val1);
+ scanf("%d",&prod2);
+ scanf("%d",&n2);
+ scanf("%lf",&val2);
+ tot = (val1*n1) + (val2*n2);
+ printf("VALOR A PAGAR: R$ %.2lf\n",tot);
+    return 0;
+}
