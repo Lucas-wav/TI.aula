@@ -36,7 +36,7 @@ oferece um modo de divir arbitrariamente a tarefa da rede em pedaços separados,
 
 
 7:Aplicação
-a camada de aplicação faz a interface entre o protocolo de comunicação e o aplicativo que o pediu ou recebera cada um deles
+a camada de aplicação faz a interface entre o protocolo de comunicação e o aplicativo que o pediu ou recebera cada um deles.
 
 6:Apresentação
 Converte os dados recebidos da camada de aplicação em um formato comum a ser compreendido para ser usado na transmissão de dados.
