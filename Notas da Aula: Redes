@@ -1,3 +1,4 @@
+Acabou o espaço do meu caderno...
 Meios de transmissão:
 de acordo com Tanebaum (1997), existem vários meios físicos que podem ser usados para realizar a transmissão de dados. Cada um com sua própria característica em relação a largura e banda, retardo, custo e facilidade de instalação e manutenção.
 
@@ -16,7 +17,7 @@ CAT 7;
 (pesquisar^)
 
 Fibra Ótica:
-Segundo Torres (2001) a fibra ótica transmitem informações através de sinais luminosos em vez de sinais elétricos. A fibra é totalmente imune a ruídos com isso sua comunicação é mais rápida
+Segundo Torres (2001) a fibra ótica transmitem informações através de sinais luminosos em vez de sinais elétricos. A fibra é totalmente imune a ruídos com isso sua comunicação é mais rápida.
 Conforme DANTAS (2002) as fibras são classificadas de acordo com a forma que a luz trafega no cabo.
 
 Mamamodo:
@@ -24,3 +25,18 @@ Um único sinal de luz é transportado de forma direta no núcleo do cabo. esse 
 
 Multimodo
 Tem como caracterítica seu feixe de transmissão viaja ao longo de seu trajeto fazendo diferentes refrações nas paredes do núcleo de seu cabo
+//
+O Modelo OSI
+Conforme torres(2004) oara facilitar a interconexão de sistemas de computadores a ISO ( International Standarts Organization) Desenvolveu um modúlo de referência chamada OSI (Open Systems Intercommunication) para que fabricantes pudessem criar
+protocólos a partir desse modelo.
+
+Camadas do modelo OSI
+Segundo Spurgeon (2000): o modelo de referência OSi é p método para descrever como conjuntos interconectados de hardware e software de redes podem ser organizados para que trabalhem economicamente no mundo das redes. com efeito, o modelo OSI
+oferece um modo de divir arbitrariamente a tarefa da rede em pedaços separados, que estão sujeitos ao processo formal de padronização, para fazer isso o modelo de referência OSI descreve sete camadas de funções de redes.
+7:Aplicação
+6:Apresentação
+5:Sessão
+4:Transporte
+3:Redes (Roteadores
+2:Enlace de Dados (Switches)
+1:Físico (Hubs)
