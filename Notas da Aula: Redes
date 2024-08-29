@@ -32,11 +32,27 @@ protocólos a partir desse modelo.
 
 Camadas do modelo OSI
 Segundo Spurgeon (2000): o modelo de referência OSi é p método para descrever como conjuntos interconectados de hardware e software de redes podem ser organizados para que trabalhem economicamente no mundo das redes. com efeito, o modelo OSI
-oferece um modo de divir arbitrariamente a tarefa da rede em pedaços separados, que estão sujeitos ao processo formal de padronização, para fazer isso o modelo de referência OSI descreve sete camadas de funções de redes.
+oferece um modo de divir arbitrariamente a tarefa da rede em pedaços separados, que estão sujeitos ao processo formal de padronização, para fazer isso o modelo de referência OSI descreve sete camadas de funções de redes:
+
+
 7:Aplicação
+a camada de aplicação faz a interface entre o protocolo de comunicação e o aplicativo que o pediu ou recebera cada um deles
+
 6:Apresentação
+Converte os dados recebidos da camada de aplicação em um formato comum a ser compreendido para ser usado na transmissão de dados.
+
 5:Sessão
+A camada de sessão permite que duas aplicações em computadores diferentes estabeleçam uma sessão de comunicação.
+
 4:Transporte
-3:Redes (Roteadores
+esta camada é responsável por pegar os dados enviados pelas camadas de sessão e deividi-las em pacotes que seram transmitidas á camada de redes.
+
+3:Redes (Roteadores)
+É responsavel pelo endereçamento dos pacotes, convertendo endereços lógicos em físicos de forma que os pacotes consigam chegar corretamente em seu destino.
+
 2:Enlace de Dados (Switches)
+Esta camada pega os pacotes de dados recebidos da camada de redes e os transformam em quadros que trafegam pela rede e adicionam informações como o endereço da placa de origem da de destino os dados de controle, os dados em si chegam em
+redundância cíclica.
+
 1:Físico (Hubs)
+Esta camada pega os quadros enviados pela camada de enlace e os transforma em sinais comparativos onde os dados devem ser transmitidos.
