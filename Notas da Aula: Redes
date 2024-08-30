@@ -56,3 +56,24 @@ redundância cíclica.
 
 1:Físico (Hubs)
 Esta camada pega os quadros enviados pela camada de enlace e os transforma em sinais comparativos onde os dados devem ser transmitidos.
+
+//
+
+Modelo TCP/IP
+Segundo Dantas(2002), o modelo de referência mais conhecido é o TCP/IP (Transmission control protocol) o Modelo TCP/IP foi projetado em 04 camadas:
+4 Aplicação
+3 Transporte
+2 Inter-rede Internet
+1 Interface de rede
+
+Aplicação:
+A quarta camada do modelo TCP/IP é denominada aplicação, pois é nela que é feita os protocolos que dão suporte as aplicações do usuário.
+
+Transporte.
+A camada de transporte é responsável por prover suporte a camada de aplicação de maneira confiável (ou não) independente dos serviços oferecidos pelas camadas de interface de redes e inter-Redes
+
+Inter-Rede
+O nível inter-rede (internet) é o resposável pelo envio dos datagramas de um computador qualquer para outro independente de suas localizações.
+
+Interface de Rede:
+Esta camada, de acesso à rede é a primeira do modelo TCP/IP, sua fubção é dar suporte à camada de rede, através dos serviços de acesso físico e lógico ao meio físico
