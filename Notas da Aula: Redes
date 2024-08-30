@@ -77,3 +77,19 @@ O nível inter-rede (internet) é o resposável pelo envio dos datagramas de um 
 
 Interface de Rede:
 Esta camada, de acesso à rede é a primeira do modelo TCP/IP, sua fubção é dar suporte à camada de rede, através dos serviços de acesso físico e lógico ao meio físico
+
+Protocolo de comunicação:
+Segundo Torres (2004), protocolo é a "linguagem" usada pelos dispositivos de uma rede de modo uqe eles consigam se entender ou seja trocar informações entre si. Portanto, o protocolo é um conjunto de regras que governam a comunicação de dados
+
+Tipos de Protocolos
+Existem diversos tipos de protocolos: os principais sendo
+Http:
+Smpt:
+Ftp:
+Snmp:
+DNS:
+TCP:
+IP:
+ICMP:
+ARP:
+RARP:
