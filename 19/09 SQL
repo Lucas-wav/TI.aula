@@ -1,0 +1,88 @@
+import sqlite3
+
+def validar_email(email):
+    """Valida o formato do email."""
+    padrao_email = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    return re.match(padrao_email, email)
+    
+def cadastrar(cursor, conn):
+    _nome = input("Digite o nome do cliente: ").lower()
+    _email = input("Digite o email do cliente: ").lower()
+    while not validar_email(_email):
+        print("Email inválido. Tente novamente.")
+        _email = input("Digite o email do cliente: ").strip().lower()
+    _telefone = input("Digite o telefone do cliente: ")
+    cursor.execute('''INSERT INTO clientes (nome, email, telefone) VALUES (?, ?, ?)''', (_nome, _email, _telefone))
+    conn.commit()
+    print("Cliente cadastrado com sucesso!")
+
+
+def pesquisar(cursor):
+    _nome = input("Digite o nome do cliente: ").lower()
+    if _nome == '':
+        cursor.execute('''SELECT * FROM clientes''')
+        resultados = cursor.fetchall()
+        for linha in resultados:
+            print("Nome:", linha[1], '\n', "Email:", linha[2], '\n', "Telefone:", linha[3], '\n', "ID:", linha[0])
+    else:
+        cursor.execute('''SELECT * FROM clientes WHERE nome LIKE ?''', ['%' + _nome + '%'])
+        resultados = cursor.fetchall()
+        if resultados:
+            for linha in resultados:
+                print("Nome:", linha[1], '\n', "Email:", linha[2], '\n', "Telefone:", linha[3], '\n', "ID:", linha[0])
+        else:
+            print("Nenhum cliente encontrado com esse nome.")
+
+
+def atualizar(cursor, conn):
+    _codigo = input("Digite o código do cliente: ")
+    _nome = input("Nome novo: ").lower()
+    _email = input("Email novo: ").lower()
+    _telefone = input("Telefone novo: ").lower()
+    cursor.execute('''UPDATE clientes SET nome = ?, email = ?, telefone = ? WHERE codigo = ?''', (_nome, _email, _telefone, _codigo))
+    conn.commit()
+    print("Cliente atualizado com sucesso!")
+
+
+def excluir(cursor, conn):
+    _codigo = input("Digite o código do cliente: ")
+    cursor.execute('''DELETE FROM clientes WHERE codigo = ?''', (_codigo,))
+    conn.commit()
+    print("Cliente excluído com sucesso!")
+
+
+def sair(conn):
+    conn.close()
+    print("Conexão fechada. Saindo...")
+    exit()
+
+
+if __name__ == "__main__":
+    conn = sqlite3.connect("clientes.db")
+    cursor = conn.cursor()
+
+    # Criar a tabela
+    cursor.execute('''DROP TABLE IF EXISTS "clientes"''')
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS "clientes" (
+        "codigo" INTEGER,
+        "nome" TEXT NOT NULL,
+        "email" TEXT,
+        "telefone" TEXT,
+        PRIMARY KEY("codigo" AUTOINCREMENT)
+    )
+    ''')
+
+    while True:
+        escolha = int(input("1 - Cadastrar\n2 - Pesquisar\n3 - Atualizar\n4 - Excluir\n5 - Sair\n\nEscolha uma opção: "))
+        match escolha:
+            case 1:
+                cadastrar(cursor, conn)
+            case 2:
+                pesquisar(cursor)
+            case 3:
+                atualizar(cursor, conn)
+            case 4:
+                excluir(cursor, conn)
+            case 5:
+                sair(conn)
